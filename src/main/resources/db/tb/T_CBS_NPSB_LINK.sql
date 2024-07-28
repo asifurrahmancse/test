@@ -1,0 +1,32 @@
+CREATE TABLE T_CBS_NPSB_LINK (
+    id_cbs_npsb_link_key 	INT NOT NULL IDENTITY(1,1),
+    id_cbs_npsb_link_ver 	INT NOT NULL,
+    dtt_mod DATETIME 		NOT NULL,
+    dt_posting_date 		DATE,
+    dt_transaction_date 	DATE,
+    tx_card_no 				VARCHAR(50),
+    tx_account_no 			VARCHAR(50),
+    tx_transaction_name 	VARCHAR(50),
+    tx_terminal_id 			VARCHAR(50),
+    tx_terminal_location 	VARCHAR(60),
+    tx_retailer_id 			VARCHAR(50),
+    tx_approval 			VARCHAR(50),
+    tx_mcc_code 			VARCHAR(50),
+    tx_pos_condition 		VARCHAR(50),
+    tx_rrn 					VARCHAR(50),
+    tx_stan 				VARCHAR(50),
+    tx_issuer 				VARCHAR(50),
+    tx_acquirer 			VARCHAR(50),
+    tx_txn_amount_bdt 		VARCHAR(50),
+    tx_txn_fee_amount_bdt 	VARCHAR(50),
+	tx_vat_amount_bdt 		VARCHAR(50),
+	tx_issuer_fee_bdt 		VARCHAR(50),
+	tx_issuer_vat_bdt 		VARCHAR(50),
+	tx_total_amount_bdt 	VARCHAR(50),
+	tx_issuer_income_bdt 	VARCHAR(50),
+	tx_acquirer_income_bdt 	VARCHAR(50),
+	tx_itcl_income_bdt 		VARCHAR(50),
+	tx_bank_profit_bdt 		VARCHAR(50)
+
+    PRIMARY KEY (id_cbs_npsb_link_key)
+);

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<groupId>io.naztech</groupId>
+	<artifactId>ATM_log_service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ATM_log_service</name>
+	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
+	<properties>
+		<java.version>1.8</java.version>
+		<nazdaq.core.ver>1.0.1</nazdaq.core.ver>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.jtds</groupId>
+			<artifactId>jtds</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+			
+		<dependency>
+ 			 <groupId>org.apache.maven.plugins</groupId>
+ 			 <artifactId>maven-clean-plugin</artifactId>
+ 			 <version>3.2.0</version>
+ 			 <type>maven-plugin</type>
+		</dependency>	
+		
+		<dependency>
+			<groupId>com.nazdaqTechnologies</groupId>
+			<artifactId>nazdaq-core</artifactId>
+			<version>${nazdaq.core.ver}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.oracle</groupId>
+					<artifactId>ojdbc7</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+	
+	
+		<plugins>
+		
+
+			<plugin>
+			    <groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin> 
+		</plugins>
+	</build>
+
+
+	 <distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>nazdaq-repo-releases</name>
+			<url>http://dac-repo.ntdac.naztech.local:8080/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>nazdaq-repo-snapshots</name>
+			<url>http://dac-repo.ntdac.naztech.local:8080/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement> 
+
+</project>
